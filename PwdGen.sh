@@ -37,13 +37,15 @@ Main_App()
             ["O"|"o"|"OUI"|"oui"]* )
             clear 
             echo "${Pass_Gen}" >> passwords.txt
+            
             printf "====================================================== \n"
             echo "[ Merci d'avoir utilisé le Programme ]"
             printf "====================================================== \n"
             exit
             ;;
             ["N"|"n"|"NON"|"non"]* )
-            clear && \
+            clear
+            
             printf "====================================================== \n"
             echo "[ Merci d'avoir utilisé le Programme ]"
             printf "====================================================== \n"
