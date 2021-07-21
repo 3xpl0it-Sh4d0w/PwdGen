@@ -17,7 +17,7 @@ Configuration
 
 Main_App()
 {
-    CLI_Password_Generator() # Permets de Générer un Mot de Passe.
+    PwdGen() # Permets de Générer un Mot de Passe.
     {
         Banner
         read -p "[ Nombre de Mots de Passes à Générer ] : " Pass_Nbr
@@ -51,7 +51,6 @@ Main_App()
             ;;
         esac
     }
+    PwdGen
 }
 Main_App
-
-CLI_Password_Generator
