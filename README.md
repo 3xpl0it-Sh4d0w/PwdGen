@@ -2,8 +2,12 @@
   <img src="PwdGen.png">
 </p>
 <p align="left">
-  <img src="https://img.shields.io/badge/Licence-GPL%20V3-blue">
-  <img src="https://img.shields.io/badge/Language-Shell%20Bash-blue?logo=gnubash">
+    <a href="https://www.gnu.org/licenses/quick-guide-gplv3.fr.html">
+      <img src="https://img.shields.io/badge/Licence-GPL%20V3-blue">
+    </a>
+    <a href="https://fr.wikipedia.org/wiki/Bourne-Again_shell">
+      <img src="https://img.shields.io/badge/Language-Shell%20Bash-blue?logo=gnubash">
+    </a>
 </p>
 
 🇬🇧 Bash script to randomly generate passwords.<br>
