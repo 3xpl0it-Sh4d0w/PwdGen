@@ -16,5 +16,5 @@
 ```bash
 git clone https://github.com/3xpl0it-Sh4d0w/PwdGen.git && cd PwdGen && chmod +x PwdGen.sh
 ```
-🇬🇧 To execute the Script do : ./PwdGen.sh or bash PwdGen.sh Enjoy ! 🙂.<br>
-🇫🇷 Pour executer le Script faites : ./PwdGen.sh où bash PwdGen.sh Bonne utilisation ! 🙂.
+🇬🇧 To execute the Script do : `./PwdGen.sh or bash PwdGen.sh` Enjoy ! 🙂.<br>
+🇫🇷 Pour executer le Script faites : `./PwdGen.sh où bash PwdGen.sh` Bonne utilisation ! 🙂.
