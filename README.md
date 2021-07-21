@@ -2,15 +2,12 @@
     <a href="https://github.com/3xpl0it-Sh4d0w/PwdGen"><img src="PwdGen.png"></a>
 </p>
 
-<p align="center">
+<p align="left">
     <a href="https://www.gnu.org/licenses/quick-guide-gplv3.fr.html">
         <img src="https://img.shields.io/badge/Licence-GPL%20V3-blue">
     </a>
-    <a href="https://img.shields.io/badge/Shell-Bash-blue?logo=gnubash">
-        <img src="https://fr.wikipedia.org/wiki/Bourne-Again_shell">
-    </a>
-    <a href="https://parrotsec.org">
-        <img src="https://img.shields.io/badge/Tested-ParrotOS-blue?logo=debian">
+    <a href="https://fr.wikipedia.org/wiki/Bourne-Again_shell">
+        <img src="https://img.shields.io/badge/Language-Bash%20Shell-blue?logo=gnubash">
     </a>
 </p>
 
