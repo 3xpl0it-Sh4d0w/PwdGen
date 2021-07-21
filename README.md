@@ -2,9 +2,17 @@
     <a href="https://github.com/3xpl0it-Sh4d0w/PwdGen"><img src="PwdGen.png"></a>
 </p>
 
-[![Licence](https://img.shields.io/badge/Licence-GPL%20V3-blue)](https://www.gnu.org/licenses/quick-guide-gplv3.fr.html)
-[![Language](https://img.shields.io/badge/Language-Shell%20Bash-blue?logo=gnubash)](https://fr.wikipedia.org/wiki/Bourne-Again_shell")
-[![Tested](https://img.shields.io/badge/Tested-ParrotOS-blue?logo=debian)](https://parrotsec.org)
+<p align="center">
+    <a href="https://www.gnu.org/licenses/quick-guide-gplv3.fr.html">
+        <img src="https://img.shields.io/badge/Licence-GPL%20V3-blue">
+    </a>
+    <a href="https://img.shields.io/badge/Language-Shell%20Bash-blue?logo=gnubash">
+        <img src="https://fr.wikipedia.org/wiki/Bourne-Again_shell">
+    </a>
+    <a href="https://parrotsec.org">
+        <img src="https://img.shields.io/badge/Tested-ParrotOS-blue?logo=debian">
+    </a>
+</p>
 
 🇬🇧 Bash script to randomly generate passwords.<br>
 🇫🇷 Script Bash permettant de génerer aléatoirement des mots de passe.
