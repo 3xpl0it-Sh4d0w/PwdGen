@@ -8,7 +8,7 @@
 🇬🇧 Bash script to randomly generate passwords.<br>
 🇫🇷 Script Bash permettant de génerer aléatoirement des mots de passe.
 # Requirements :
-`GIT` & `BASH`.
+`GIT` & `BASH` and `ZENITY`.
 # Installation :
 🇬🇧 Open your Terminal and copy this Command :<br>
 🇫🇷 Ouvrez votre Terminal et copiez cette Commande :<br>
