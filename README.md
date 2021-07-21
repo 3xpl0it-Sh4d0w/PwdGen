@@ -1,14 +1,9 @@
 <p align="center">
   <img src="PwdGen.png">
 </p>
-<p align="left">
-    <a href="https://www.gnu.org/licenses/quick-guide-gplv3.fr.html">
-      <img src="https://img.shields.io/badge/Licence-GPL%20V3-blue">
-    </a>
-    <a href="https://fr.wikipedia.org/wiki/Bourne-Again_shell">
-      <img src="https://img.shields.io/badge/Language-Shell%20Bash-blue?logo=gnubash">
-    </a>
-</p>
+
+[![Licence](https://img.shields.io/badge/Licence-GPL%20V3-blue)](https://www.gnu.org/licenses/quick-guide-gplv3.fr.html)
+[![Language](https://img.shields.io/badge/Language-Shell%20Bash-blue?logo=gnubash)](https://fr.wikipedia.org/wiki/Bourne-Again_shell")
 
 🇬🇧 Bash script to randomly generate passwords.<br>
 🇫🇷 Script Bash permettant de génerer aléatoirement des mots de passe.
