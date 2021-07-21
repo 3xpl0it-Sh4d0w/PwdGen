@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="PwdGen.png">
+    <a href="https://github.com/3xpl0it-Sh4d0w/PwdGen"><img src="PwdGen.png"></a>
 </p>
 
 [![Licence](https://img.shields.io/badge/Licence-GPL%20V3-blue)](https://www.gnu.org/licenses/quick-guide-gplv3.fr.html)
