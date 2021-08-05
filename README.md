@@ -2,7 +2,7 @@
     <a href="https://github.com/3xpl0it-Sh4d0w/PwdGen"><img src="PwdGen.png"></a>
 </p>
 
-<p align="left">
+<p align="center">
     <a href="https://www.gnu.org/licenses/quick-guide-gplv3.fr.html">
         <img src="https://img.shields.io/badge/Licence-GPL%20V3-blue">
     </a>
