@@ -68,18 +68,18 @@ Configuration()
             Script_Version=${cl}${light_cl_green}"Version : 1.0"${cl}${cl_reset}
             Script_Copyleft=${cl}${light_cl_green}"Copyleft : 2021"${cl}${cl_reset}
 
-            clear
-            printf "${Line}"
-            printf "${Start}${cl}${light_cl_cyan}       ██████╗ ██╗    ██╗██████╗  ██████╗ ███████╗███╗   ██╗      ${cl}${cl_reset}${End}"
-            printf "${Start}${cl}${light_cl_cyan}       ██╔══██╗██║    ██║██╔══██╗██╔════╝ ██╔════╝████╗  ██║      ${cl}${cl_reset}${End}"
-            printf "${Start}${cl}${light_cl_cyan}       ██████╔╝██║ █╗ ██║██║  ██║██║  ███╗█████╗  ██╔██╗ ██║      ${cl}${cl_reset}${End}"
-            printf "${Start}${cl}${light_cl_cyan}       ██╔═══╝ ██║███╗██║██║  ██║██║   ██║██╔══╝  ██║╚██╗██║      ${cl}${cl_reset}${End}"
-            printf "${Start}${cl}${light_cl_cyan}       ██║     ╚███╔███╔╝██████╔╝╚██████╔╝███████╗██║ ╚████║      ${cl}${cl_reset}${End}"
-            printf "${Start}${cl}${light_cl_cyan}       ╚═╝      ╚══╝╚══╝ ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═══╝      ${cl}${cl_reset}${End}"
+            { clear }
+            { printf "${Line}" }
+            { printf "${Start}${cl}${light_cl_cyan}       ██████╗ ██╗    ██╗██████╗  ██████╗ ███████╗███╗   ██╗      ${cl}${cl_reset}${End}" }
+            { printf "${Start}${cl}${light_cl_cyan}       ██╔══██╗██║    ██║██╔══██╗██╔════╝ ██╔════╝████╗  ██║      ${cl}${cl_reset}${End}" }
+            { printf "${Start}${cl}${light_cl_cyan}       ██████╔╝██║ █╗ ██║██║  ██║██║  ███╗█████╗  ██╔██╗ ██║      ${cl}${cl_reset}${End}" }
+            { printf "${Start}${cl}${light_cl_cyan}       ██╔═══╝ ██║███╗██║██║  ██║██║   ██║██╔══╝  ██║╚██╗██║      ${cl}${cl_reset}${End}" }
+            { printf "${Start}${cl}${light_cl_cyan}       ██║     ╚███╔███╔╝██████╔╝╚██████╔╝███████╗██║ ╚████║      ${cl}${cl_reset}${End}" }
+            { printf "${Start}${cl}${light_cl_cyan}       ╚═╝      ╚══╝╚══╝ ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═══╝      ${cl}${cl_reset}${End}" }
 
-            printf "${Line}"
-            printf "${Start}${Script_Name}${Sep}${Script_Author}${Sep}${Script_Version}${Sep}${Script_Copyleft}${End}"
-            printf "${Line}"
+            { printf "${Line}" }
+            { printf "${Start}${Script_Name}${Sep}${Script_Author}${Sep}${Script_Version}${Sep}${Script_Copyleft}${End}" }
+            { printf "${Line}" }
         }
         Banner_Header
     }
@@ -91,23 +91,26 @@ Main_App()
 {
     PwdGen()
     {
-        clear && Banner_Header
-        read -p "$(printf "${cl}${light_cl_black}[ Nombre de mots de passe à générer ] : ${cl}${cl_reset}")" Nbr_Pass
+        { clear && Banner_Header }
 
-        clear && Banner_Header
-        read -p "$(printf "${cl}${light_cl_black}[ Nombre de caractères à générer pour les mots de passe ] : ${cl}${cl_reset}")" Lng_Pass
+        { read -p "$(printf "${cl}${light_cl_black}[ Nombre de mots de passe à générer ] : ${cl}${cl_reset}")" Nbr_Pass }
+
+        { clear && Banner_Header }
+
+        read -p "$(printf "${cl}${light_cl_black}[ Nombre de caractères à générer pour les mots de passe ] : ${cl}${cl_reset}")" Lng_Pass }
 
         Pass_Gen=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9!?@#$%^&*"^_+=><~`:;.' | fold -w ${Lng_Pass} | head -n ${Nbr_Pass})
 
-        clear && Banner_Header && echo "${Pass_Gen}" && printf "${Line}"
+        { clear && Banner_Header && echo "${Pass_Gen}" && printf "${Line}" }
 
-        read -p "$(printf "${question} ${cl}${light_cl_black}Voulez-vous exporter les mots de passe dans la DB ? [O - N] : ${cl}${cl_reset}")" reponse
+
+        { read -p "$(printf "${question} ${cl}${light_cl_black}Voulez-vous exporter les mots de passe dans la DB ? [O - N] : ${cl}${cl_reset}")" reponse }
 
         case $reponse in
             "O"|"o"|"OUI"|"oui" )
                 echo "${Pass_Gen}" >> ${pwdgen_directory}${pwdgen_filename} && printf "${Line}"
 
-                clear
+                { clear }
 
                 zenity \
                     --notification \

@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# ===============================================
+# PwdGen - By : 3xpl0it Sh4d0w - Copyleft : 2021.
+# ===============================================
+# Date de Création      : 02-07-2021.
+# Date de Modification  : 21-07-2021.
+# ===============================================
+
+COMMAND="$1"
+
+function PWDGEN_CLI()
+{
+
+}
+
+function PWDGEN_GUI()
+{
+
+}
+
+if [[ ("${COMMAND}" = "CLI") ]] || \
+[[ ("${COMMAND}" = "cli") ]] || \
+[[ ("${COMMAND}" = "-C") ]] || \
+[[ ("${COMMAND}" = "-c") ]]
+    then
+        PWDGEN_CLI
+fi
+
+if [[ ("${COMMAND}" = "GUI") ]] || \
+[[ ("${COMMAND}" = "gui") ]] || \
+[[ ("${COMMAND}" = "-G") ]] || \
+[[ ("${COMMAND}" = "-g") ]]
+    then
+        PWDGEN_GUI
+fi
