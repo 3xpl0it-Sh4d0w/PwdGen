@@ -10,7 +10,7 @@ COMMAND="$1"
 
 LINE_BREACK="\n"
 
-function MODULE_COLORS()
+MODULE_COLORS()
 {
     RESET="\033[0m"
 
@@ -24,7 +24,7 @@ function MODULE_COLORS()
 }
 MODULE_COLORS
 
-function MODULE_BANNER()
+MODULE_BANNER()
 {
     SEP=${GREY}" - "${RESET}
     START=${GREY}"[ "${RESET}
@@ -51,12 +51,12 @@ function MODULE_BANNER()
     printf "${LINE}" 
 }
 
-function PWDGEN_CLI()
+PWDGEN_CLI()
 {
     GENERATE_PASSWORD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9!?@#$%^&*"^_+=><~`:;.' | fold -w ${LNG_PASS} | head -n ${NBR_PASS})
 }
 
-function PWDGEN_GUI()
+PWDGEN_GUI()
 {
 
 }
