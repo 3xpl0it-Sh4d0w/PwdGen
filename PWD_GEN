@@ -8,6 +8,8 @@
 
 COMMAND="$1"
 
+LINE_BREACK="\n"
+
 function MODULE_COLORS()
 {
     RESET="\033[0m"
@@ -26,8 +28,8 @@ function MODULE_BANNER()
 {
     SEP=${GREY}" - "${RESET}
     START=${GREY}"[ "${RESET}
-    END=${GREY}" ] \n"${RESET}
-    LINE=${GREY}"====================================================================== \n"${RESET}
+    END=${GREY}" ] ${LINE_BREACK}"${RESET}
+    LINE=${GREY}"====================================================================== ${LINE_BREACK}"${RESET}
 
     SCRIPT_NAME=${CYAN}"CLI PwdGen"${RESET}
     SCRIPT_AUTHOR=${YELLOW}"By : 3xpl0it Sh4d0w"${RESET}
@@ -64,6 +66,7 @@ if [[ ("${COMMAND}" = "CLI") ]] || \
 [[ ("${COMMAND}" = "-C") ]] || \
 [[ ("${COMMAND}" = "-c") ]]
     then
+        MODULE_BANNER
         PWDGEN_CLI
 fi
 
@@ -72,5 +75,5 @@ if [[ ("${COMMAND}" = "GUI") ]] || \
 [[ ("${COMMAND}" = "-G") ]] || \
 [[ ("${COMMAND}" = "-g") ]]
     then
-        PWDGEN_GUI
+        printf "COMMING SOON, SORRY ${LINE_BREACK}"
 fi
