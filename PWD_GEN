@@ -8,6 +8,47 @@
 
 COMMAND="$1"
 
+function MODULE_COLORS()
+{
+    RESET="\033[0m"
+
+    RED="\033[1;31m"
+    BLUE="\033[1;34m"
+    CYAN="\033[1;36m"
+    GREY="\033[1;30m"
+    GREEN="\033[1;32m"
+    WHITE="\033[1;37m"
+    YELLOW="\033[1;33m"
+}
+MODULE_COLORS
+
+function MODULE_BANNER()
+{
+    SEP=${GREY}" - "${RESET}
+    START=${GREY}"[ "${RESET}
+    END=${GREY}" ] \n"${RESET}
+    LINE=${GREY}"====================================================================== \n"${RESET}
+
+    SCRIPT_NAME=${CYAN}"CLI PwdGen"${RESET}
+    SCRIPT_AUTHOR=${YELLOW}"By : 3xpl0it Sh4d0w"${RESET}
+    SCRIPT_VERSION=${GREEN}"Version : 1.0"${RESET}
+    SCRIPT_COPYLEFT=${GREEN}"Copyleft : 2022"${RESET}
+
+    clear
+
+    printf "${LINE}"
+    printf "${START}${CYAN}       ██████╗ ██╗    ██╗██████╗  ██████╗ ███████╗███╗   ██╗      ${RESET}${END}" 
+    printf "${START}${CYAN}       ██╔══██╗██║    ██║██╔══██╗██╔════╝ ██╔════╝████╗  ██║      ${RESET}${END}" 
+    printf "${START}${CYAN}       ██████╔╝██║ █╗ ██║██║  ██║██║  ███╗█████╗  ██╔██╗ ██║      ${RESET}${END}" 
+    printf "${START}${CYAN}       ██╔═══╝ ██║███╗██║██║  ██║██║   ██║██╔══╝  ██║╚██╗██║      ${RESET}${END}" 
+    printf "${START}${CYAN}       ██║     ╚███╔███╔╝██████╔╝╚██████╔╝███████╗██║ ╚████║      ${RESET}${END}"
+    printf "${START}${CYAN}       ╚═╝      ╚══╝╚══╝ ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═══╝      ${RESET}${END}" 
+
+    printf "${LINE}" 
+    printf "${START}${SCRIPT_NAME}${SEP}${SCRIPT_AUTHOR}${SEP}${SCRIPT_VERSION}${SEP}${SCRIPT_COPYLEFT}${END}" 
+    printf "${LINE}" 
+}
+
 function PWDGEN_CLI()
 {
 
