@@ -7,8 +7,8 @@
 # ===============================================
 
 INTERFACE="$1"
-COMMAND="$2"
-ARGUMENT="$3"
+ARGUMENT_1="$2"
+ARGUMENT_2="$3"
 
 MODULE_COLORS()
 {
@@ -58,6 +58,10 @@ MODULE_BANNER()
 
 PWDGEN_CLI()
 {
+    ARGUMENT_1="$1"
+    ARGUMENT_2="$2"
+
+    cat /dev/random | tr -dc 'a-zA-Z0-9!?@#$%^&*"^_+=><~`:;.' | fold -w $ARGUMENT_1 | head -n $ARGUMENT_2
 }
 
 PWDGEN_GUI()
@@ -80,8 +84,7 @@ if [[ ("${INTERFACE}" = "CLI") ]] || \
 [[ ("${INTERFACE}" = "-C") ]] || \
 [[ ("${INTERFACE}" = "-c") ]]
     then
-        MODULE_BANNER
-        PWDGEN_CLI
+        PWDGEN_CLI $ARGUMENT_1 $ARGUMENT_2
 fi
 
 if [[ ("${INTERFACE}" = "GUI") ]] || \
@@ -89,5 +92,5 @@ if [[ ("${INTERFACE}" = "GUI") ]] || \
 [[ ("${INTERFACE}" = "-G") ]] || \
 [[ ("${INTERFACE}" = "-g") ]]
     then
-        printf "COMMING SOON, SORRY ${LINE_BREACK}"
+        PWDGEN_GUI
 fi
