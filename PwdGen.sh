@@ -87,11 +87,9 @@ Configuration()
 }
 Configuration
 
-Main_App()
+PwdGen()
 {
-    PwdGen()
-    {
-        { clear && Banner_Header }
+    clear && Banner_Header }
 
         { read -p "$(printf "${cl}${light_cl_black}[ Nombre de mots de passe à générer ] : ${cl}${cl_reset}")" Nbr_Pass }
 

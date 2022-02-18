@@ -6,9 +6,9 @@
 # Date de Modification  : 21-07-2021.
 # ===============================================
 
-COMMAND="$1"
-
-LINE_BREACK="\n"
+INTERFACE="$1"
+COMMAND="$2"
+ARGUMENT="$3"
 
 MODULE_COLORS()
 {
@@ -24,19 +24,24 @@ MODULE_COLORS()
 }
 MODULE_COLORS
 
-MODULE_BANNER()
-{
+MODULE_FORMATAGE()
+{   
+    TAB="\t"
+    LINE_BREACK="\n"
+    
     SEP=${GREY}" - "${RESET}
     START=${GREY}"[ "${RESET}
     END=${GREY}" ] ${LINE_BREACK}"${RESET}
     LINE=${GREY}"====================================================================== ${LINE_BREACK}"${RESET}
 
+}
+
+MODULE_BANNER()
+{
     SCRIPT_NAME=${CYAN}"CLI PwdGen"${RESET}
     SCRIPT_AUTHOR=${YELLOW}"By : 3xpl0it Sh4d0w"${RESET}
     SCRIPT_VERSION=${GREEN}"Version : 1.0"${RESET}
     SCRIPT_COPYLEFT=${GREEN}"Copyleft : 2022"${RESET}
-
-    clear
 
     printf "${LINE}"
     printf "${START}${CYAN}       ██████╗ ██╗    ██╗██████╗  ██████╗ ███████╗███╗   ██╗      ${RESET}${END}" 
@@ -53,27 +58,36 @@ MODULE_BANNER()
 
 PWDGEN_CLI()
 {
-    GENERATE_PASSWORD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9!?@#$%^&*"^_+=><~`:;.' | fold -w ${LNG_PASS} | head -n ${NBR_PASS})
 }
 
 PWDGEN_GUI()
 {
+    clear && MODULE_BANNER
 
+    read -p "$(printf "Veuillez Choisir la Longeur dU Mot de Passe : ")" LNG_PASS
+
+    clear && MODULE_BANNER
+
+    read -p "$(printf "Veuillez Choisir le Nombre de Mots de Passe : ")" NBR_PASS
+
+    GENERATE_PASSWORD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9!?@#$%^&*"^_+=><~`:;.' | fold -w ${LNG_PASS} | head -n ${NBR_PASS})
+
+    clear && MODULE_BANNER && GENERATE_PASSWORD
 }
 
-if [[ ("${COMMAND}" = "CLI") ]] || \
-[[ ("${COMMAND}" = "cli") ]] || \
-[[ ("${COMMAND}" = "-C") ]] || \
-[[ ("${COMMAND}" = "-c") ]]
+if [[ ("${INTERFACE}" = "CLI") ]] || \
+[[ ("${INTERFACE}" = "cli") ]] || \
+[[ ("${INTERFACE}" = "-C") ]] || \
+[[ ("${INTERFACE}" = "-c") ]]
     then
         MODULE_BANNER
         PWDGEN_CLI
 fi
 
-if [[ ("${COMMAND}" = "GUI") ]] || \
-[[ ("${COMMAND}" = "gui") ]] || \
-[[ ("${COMMAND}" = "-G") ]] || \
-[[ ("${COMMAND}" = "-g") ]]
+if [[ ("${INTERFACE}" = "GUI") ]] || \
+[[ ("${INTERFACE}" = "gui") ]] || \
+[[ ("${INTERFACE}" = "-G") ]] || \
+[[ ("${INTERFACE}" = "-g") ]]
     then
         printf "COMMING SOON, SORRY ${LINE_BREACK}"
 fi
