@@ -58,8 +58,10 @@ MODULE_BANNER()
 
 PWDGEN_CLI()
 {
-    ARGUMENT_1="$1"
-    ARGUMENT_2="$2"
+    ARGUMENT_1=""
+    ARGUMENT_2=""
+    ARGUMENT_3=""
+    ARGUMENT_4=""
 
     cat /dev/random | tr -dc 'a-zA-Z0-9!?@#$%^&*"^_+=><~`:;.' | fold -w $ARGUMENT_1 | head -n $ARGUMENT_2
 }
@@ -84,7 +86,7 @@ if [[ ("${INTERFACE}" = "CLI") ]] || \
 [[ ("${INTERFACE}" = "-C") ]] || \
 [[ ("${INTERFACE}" = "-c") ]]
     then
-        PWDGEN_CLI $ARGUMENT_1 $ARGUMENT_2
+        PWDGEN_CLI $ARGUMENT_1 $ARGUMENT_2 $ARGUMENT_3 $ARGUMENT_4
 fi
 
 if [[ ("${INTERFACE}" = "GUI") ]] || \
