@@ -66,7 +66,7 @@ Configuration()
             Script_Name=${cl}${light_cl_cyan}"CLI PwdGen"${cl}${cl_reset}
             Script_Author=${cl}${light_cl_yellow}"By : 3xpl0it Sh4d0w"${cl}${cl_reset}
             Script_Version=${cl}${light_cl_green}"Version : 1.0"${cl}${cl_reset}
-            Script_Copyleft=${cl}${light_cl_green}"Copyleft : 2021"${cl}${cl_reset}
+            Script_Copyleft=${cl}${light_cl_green}"Copyleft : 2022"${cl}${cl_reset}
 
             { clear }
             { printf "${Line}" }
