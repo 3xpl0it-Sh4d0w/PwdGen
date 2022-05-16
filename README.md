@@ -1,5 +1,7 @@
 <p align="center">
-    <a href="https://github.com/3xpl0it-Sh4d0w/PwdGen"><img src="PwdGen.png"></a>
+    <a href="#">
+        <img src="PwdGen.png">
+    </a>
 </p>
 
 <p align="center">
