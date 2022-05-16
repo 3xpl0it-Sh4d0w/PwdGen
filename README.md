@@ -19,7 +19,7 @@
 🇬🇧 Open your Terminal and copy this Command :<br>
 🇫🇷 Ouvrez votre Terminal et copiez cette Commande :<br>
 ```bash
-git clone https://github.com/3xpl0it-Sh4d0w/Pwd-Gen.git && cd PwdGen && chmod +x PwdGen.sh
+git clone https://github.com/3xpl0it-Sh4d0w/PwdGen.git && cd PwdGen && chmod +x PwdGen.sh
 ```
 ### How to use this script :
 🇬🇧 To execute the Script do : `./PwdGen.sh or bash PwdGen.sh` Enjoy ! 🙂.<br>
