@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="#" onClick="return false;">
+    <a href="javascript:void(0);">
         <img src="PwdGen.png">
     </a>
 </p>
