@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # ===============================================
-# PwdGen - By : 3xpl0it Sh4d0w - Copyleft : 2021.
+# PwdGen - By : 3xpl0it Sh4d0w - Copyleft : 2022.
 # ===============================================
 # Date de Création      : 02-07-2021.
-# Date de Modification  : 21-07-2021.
+# Date de Modification  : 25-05-2022.
 # ===============================================
 
 INTERFACE="$1"
