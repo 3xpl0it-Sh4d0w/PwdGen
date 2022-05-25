@@ -60,10 +60,10 @@ PWDGEN_CLI()
 {
     ARGUMENT_1="$1"
     ARGUMENT_2="$2"
-    ARGUMENT_3="$3"
-    ARGUMENT_4="$4"
 
-    cat /dev/random | tr -dc 'a-zA-Z0-9!?@#$%^&*"^_+=><~`:;.' | fold -w $ARGUMENT_1 | head -n $ARGUMENT_2
+    GENERATE_PASSWORD=$(cat /dev/random | tr -dc 'a-zA-Z0-9!?@#$%^&*"^_+=><~`:;.' | fold -w $ARGUMENT_1 | head -n $ARGUMENT_2)
+
+    clear && printf "$GENERATE_PASSWORD"
 }
 
 PWDGEN_GUI()
@@ -81,10 +81,20 @@ PWDGEN_GUI()
     clear && MODULE_BANNER && GENERATE_PASSWORD
 }
 
-if [[ ("${INTERFACE}" = "CLI") ]] || \
-[[ ("${INTERFACE}" = "cli") ]] || \
-[[ ("${INTERFACE}" = "-C") ]] || \
-[[ ("${INTERFACE}" = "-c") ]]
+if [[ ! $INTERFACE ]];
+    then
+        printf "=============================================================== \n"
+        printf "Veuillez préciser l'Interface : \n"
+        printf "--------------------------------------------------------------- \n"
+        printf "[ CLI ) Pour utiliser le script via les Arguments. \n"
+        printf "[ GUI ) Pour utiliser le script en mode guidé avec l'Interface. \n"
+        printf "==============================================================="
+fi
+
+if [[ ("$INTERFACE" = "CLI") ]] || \
+[[ ("$INTERFACE" = "cli") ]] || \
+[[ ("$INTERFACE" = "-C") ]] || \
+[[ ("$INTERFACE" = "-c") ]]
     then
         PWDGEN_CLI $ARGUMENT_1 $ARGUMENT_2
 fi
