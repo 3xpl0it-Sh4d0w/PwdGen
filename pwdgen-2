@@ -1,0 +1,67 @@
+#!/bin/bash
+
+# set -x
+
+pwdgen.logo()
+{
+  echo -e "██████╗ ██╗    ██╗██████╗  ██████╗ ███████╗███╗   ██╗"    
+  echo -e "██╔══██╗██║    ██║██╔══██╗██╔════╝ ██╔════╝████╗  ██║"     
+  echo -e "██████╔╝██║ █╗ ██║██║  ██║██║  ███╗█████╗  ██╔██╗ ██║"     
+  echo -e "██╔═══╝ ██║███╗██║██║  ██║██║   ██║██╔══╝  ██║╚██╗██║"    
+  echo -e "██║     ╚███╔███╔╝██████╔╝╚██████╔╝███████╗██║ ╚████║" 
+  echo -e "╚═╝      ╚══╝╚══╝ ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═══╝"
+}
+
+pwdgen.cli()
+{
+  clear
+  pwdgen.logo
+
+  read -p "Nombre de Mots de Passe : " nbr_pwd
+  clear ; pwdgen.logo
+  read -p "Longeur des Mots de Passe : " lng_pwd
+
+  clear ; pwdgen.logo
+
+  cat /dev/urandom | tr -dc 'a-zA-Z0-9!?@#$%^&*"^_+=><~`:;.' | fold -w $nbr_pwd | head -n $lng_pwd ; echo
+
+  sleep 5
+
+  read -p "Voulez-vous sauvergarder les Mots de Passe Générés ? : " reponse
+
+  if [[ "$reponse" == "O" ]];
+    then
+      echo -e "$pwdgen_cli" > password.txt
+  
+  elif [[ "$reponse" == "N" ]];
+    then
+      exit
+  fi
+}
+
+pwdgen.gui()
+{
+  clear
+  pwdgen.logo
+
+  pwdgen_gui=$(zenity \
+  --forms \
+  --title="Mots de Passe" \
+  --text="Générer un Mot de Passe" \
+  --add-entry="Nombre de Mots de Passe" \
+  --add-entry="Longeur des Mots de Passe")
+
+  nbr_pwd=$(echo -e $pwdgen_gui | cut -d "|" -f1)
+  lng_pwd=$(echo -e $pwdgen_gui | cut -d "|" -f2)
+
+  clear ; cat /dev/urandom | tr -dc 'a-zA-Z0-9!?@#$%^&*"^_+=><~`:;.' | fold -w $nbr_pwd | head -n $lng_pwd | zenity --title="Mots de Passe" --text-info
+}
+
+if [[ "$1" == "cli" ]];
+  then
+    pwdgen.cli
+
+elif [[ "$1" == "gui" ]];
+  then
+    pwdgen.gui
+fi
