@@ -1,48 +1,36 @@
 #!/bin/bash
-
-# set -x
+# ===================================================
+# [ PWDGEN - BY : 3XPL0IT SH4D0W - COPYLEFT : 2022  ]
+# [ Date de Création      : 17/06/2022 - 17:38      ]
+# [ Date de Modification  : 17/06/2022 - 17:38      ]
+# ===================================================
 
 pwdgen.logo()
 {
-  echo -e "██████╗ ██╗    ██╗██████╗  ██████╗ ███████╗███╗   ██╗"    
-  echo -e "██╔══██╗██║    ██║██╔══██╗██╔════╝ ██╔════╝████╗  ██║"     
-  echo -e "██████╔╝██║ █╗ ██║██║  ██║██║  ███╗█████╗  ██╔██╗ ██║"     
-  echo -e "██╔═══╝ ██║███╗██║██║  ██║██║   ██║██╔══╝  ██║╚██╗██║"    
-  echo -e "██║     ╚███╔███╔╝██████╔╝╚██████╔╝███████╗██║ ╚████║" 
-  echo -e "╚═╝      ╚══╝╚══╝ ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═══╝"
+  printf "██████╗ ██╗    ██╗██████╗  ██████╗ ███████╗███╗   ██╗ \n"    
+  printf "██╔══██╗██║    ██║██╔══██╗██╔════╝ ██╔════╝████╗  ██║ \n"     
+  printf "██████╔╝██║ █╗ ██║██║  ██║██║  ███╗█████╗  ██╔██╗ ██║ \n"     
+  printf "██╔═══╝ ██║███╗██║██║  ██║██║   ██║██╔══╝  ██║╚██╗██║ \n"    
+  printf "██║     ╚███╔███╔╝██████╔╝╚██████╔╝███████╗██║ ╚████║ \n" 
+  printf "╚═╝      ╚══╝╚══╝ ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═══╝ \n"
 }
 
 pwdgen.cli()
 {
-  clear
-  pwdgen.logo
+  clear && pwdgen.logo
 
-  read -p "Nombre de Mots de Passe : " nbr_pwd
-  clear ; pwdgen.logo
+  read -p "Nombre de Mots de Passe : " nbr_pwd 
+  clear && pwdgen.logo
   read -p "Longeur des Mots de Passe : " lng_pwd
 
-  clear ; pwdgen.logo
+  clear && pwdgen.logo
 
   cat /dev/urandom | tr -dc 'a-zA-Z0-9!?@#$%^&*"^_+=><~`:;.' | fold -w $nbr_pwd | head -n $lng_pwd ; echo
-
-  sleep 5
-
-  read -p "Voulez-vous sauvergarder les Mots de Passe Générés ? : " reponse
-
-  if [[ "$reponse" == "O" ]];
-    then
-      echo -e "$pwdgen_cli" > password.txt
-  
-  elif [[ "$reponse" == "N" ]];
-    then
-      exit
-  fi
 }
 
 pwdgen.gui()
 {
-  clear
-  pwdgen.logo
+  clear && pwdgen.logo
 
   pwdgen_gui=$(zenity \
   --forms \
@@ -57,11 +45,26 @@ pwdgen.gui()
   clear ; cat /dev/urandom | tr -dc 'a-zA-Z0-9!?@#$%^&*"^_+=><~`:;.' | fold -w $nbr_pwd | head -n $lng_pwd | zenity --title="Mots de Passe" --text-info
 }
 
-if [[ "$1" == "cli" ]];
+pwdgen.help()
+{
+  printf "========================================================================= \n"
+  printf "[ USAGE             | DESCRIPTION                                       ] \n"
+  printf "------------------------------------------------------------------------- \n"
+  printf "[ ./pwdgen  --help  | Pour Afficher l'Aide concenrant le Script         ] \n"
+  printf "[ ./pwdgen  --cli   | Pour Utiliser le Script via les Arguments (CLI)   ] \n"
+  printf "[ ./pwdgen  --gui   | Pour Utiliser le Script sans les Arguments. (GUI) ] \n"
+  printf "========================================================================= \n"
+}
+
+if [[ "$1" == "--cli" ]];
   then
     pwdgen.cli
 
-elif [[ "$1" == "gui" ]];
+elif [[ "$1" == "--gui" ]];
   then
     pwdgen.gui
+
+elif [[ ! "$1" ]] || [[ "$1" == "--help" ]];
+  then
+    pwdgen.help
 fi
