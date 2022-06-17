@@ -7,6 +7,7 @@
 
 pwdgen.logo()
 {
+  clear
   printf "██████╗ ██╗    ██╗██████╗  ██████╗ ███████╗███╗   ██╗ \n"    
   printf "██╔══██╗██║    ██║██╔══██╗██╔════╝ ██╔════╝████╗  ██║ \n"     
   printf "██████╔╝██║ █╗ ██║██║  ██║██║  ███╗█████╗  ██╔██╗ ██║ \n"     
@@ -17,7 +18,7 @@ pwdgen.logo()
 
 pwdgen.cli()
 {
-  clear && pwdgen.logo
+  pwdgen.logo
 
   read -p "Nombre de Mots de Passe : " nbr_pwd 
   clear && pwdgen.logo
@@ -32,7 +33,7 @@ pwdgen.cli()
 
 pwdgen.gui()
 {
-  clear && pwdgen.logo
+  pwdgen.logo
 
   pwdgen_gui=$(zenity \
   --forms \
@@ -52,6 +53,7 @@ pwdgen.gui()
 
 pwdgen.help()
 {
+  pwdgen.logo
   printf "=========================================================================== \n"
   printf "[ USAGE             | DESCRIPTION                                         ] \n"
   printf "--------------------------------------------------------------------------- \n"
