@@ -25,7 +25,9 @@ pwdgen.cli()
 
   clear && pwdgen.logo
 
-  cat /dev/urandom | tr -dc 'a-zA-Z0-9!?@#$%^&*"^_+=><~`:;.' | fold -w $nbr_pwd | head -n $lng_pwd ; echo
+  cat /dev/urandom | \
+  tr -dc 'a-zA-Z0-9!?@#$%^&*"^_+=><~`:;.' | \
+  fold -w $nbr_pwd | head -n $lng_pwd ; echo
 }
 
 pwdgen.gui()
@@ -34,7 +36,7 @@ pwdgen.gui()
 
   pwdgen_gui=$(zenity \
   --forms \
-  --title="Mots de Passe" \
+  --title="PWDGEN GUI" \
   --text="Générer un Mot de Passe" \
   --add-entry="Nombre de Mots de Passe" \
   --add-entry="Longeur des Mots de Passe")
@@ -42,7 +44,10 @@ pwdgen.gui()
   nbr_pwd=$(echo -e $pwdgen_gui | cut -d "|" -f1)
   lng_pwd=$(echo -e $pwdgen_gui | cut -d "|" -f2)
 
-  clear ; cat /dev/urandom | tr -dc 'a-zA-Z0-9!?@#$%^&*"^_+=><~`:;.' | fold -w $nbr_pwd | head -n $lng_pwd | zenity --title="Mots de Passe" --text-info
+  clear && cat /dev/urandom | \
+  tr -dc 'a-zA-Z0-9!?@#$%^&*"^_+=><~`:;.' | \
+  fold -w $nbr_pwd | head -n $lng_pwd | \
+  zenity --title="PWDGEN GUI" --text-info
 }
 
 pwdgen.help()
